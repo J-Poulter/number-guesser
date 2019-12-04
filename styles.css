@@ -1,4 +1,4 @@
-* {
+ * {
   font-family: 'Open Sans', sans-serif;
   box-sizing: border-box;
 }
@@ -8,6 +8,8 @@
   align-items: center;
   background-color: #404041;
   margin: 0px;
+  height: 160px;
+  justify-content: space-around;
 }
 
 body {
@@ -20,7 +22,7 @@ h1 {
   font-weight: 300;
   color: #DD1972;
   font-size: 4.5em;
-  margin-bottom: 0;
+  margin-bottom: -10px;
   margin-top: 25px;
 }
 
@@ -40,7 +42,7 @@ h1 {
 
 hr {
   width: 106px;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
 .subheading-container {
@@ -65,4 +67,55 @@ hr {
   background-color: #D0D2D3;
   width: 50%;
   height: 100%;
+}
+
+.set-range {
+  display: flex;
+  justify-content: space-around;
+}
+
+.range-text-box{
+  height: 45px;
+  width: 200px;
+  margin-top: 5px
+}
+
+.button-container{
+
+}
+
+.set-range-container{
+  background-color: white;
+  height: 175px;
+  margin: 20px;
+}
+
+.min-range-container{
+}
+
+.range-header{
+  margin-left: 15px;
+  padding-top: 10px;
+  font-size: 25px;
+  margin-bottom: 0px;
+  color: #404041;
+
+}
+
+.range-title{
+  margin-bottom: 4px;
+  font-size: 22px;
+  margin-top: 2px;
+  color: #404041;
+}
+
+.range-button{
+  height: 43px;
+  width: 150px;
+  border-radius: 30px;
+  font-size: 20px;
+  color: #ffffff;
+  background-color: #d0d2d3;
+  margin-left: 35px;
+
 }
