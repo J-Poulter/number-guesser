@@ -4,6 +4,7 @@
   <head>
     <title>Number Guesser</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap" rel="stylesheet">
   </head>
   <body>
     <div class="title-box">
@@ -17,49 +18,41 @@
     </div>
     <div class="section-container">
       <div class="left-column">
-
         <div class="guesses-form">
-
-          <p class="guesses-text">
-            The Current Range is 1 to 100
+          <p class="range-text">The Current Range is
+             <span class="range">1</span> to <span class="range">100</span>
           </p>
-
           <h3 class="guesses-heading">
             Challenger 1
           </h3>
-
-          <div>
+          <div class="form-holders">
             <form>
               <p class="guesses-text">Name</p>
-              <input type="text">
+              <input type="text" class="form2-input" size="45%">
             </form>
             <form>
-              <input type="text">
               <p class="guesses-text">Guess</p>
+              <input type="text" class="form2-input" size="30%">
             </form>
           </div>
-
           <h3 class="guesses-heading">
             Challenger 2
           </h3>
-
-          <div>
+          <div class="form-holders">
             <form>
               <p class="guesses-text">Name</p>
-              <input type="text">
+              <input type="text" class="form2-input" size="45%">
             </form>
             <form>
               <p class="guesses-text">Guess</p>
-              <input type="text">
+              <input type="text" class="form2-input" size="30%">
             </form>
           </div>
-
-          <div>
-            <button class="guesses-button">Submit Guess</button>
-            <button class="guesses-button">Reset Game</button>
-            <button class="guesses-button">Clear Form</button>
+          <div class="guess-button-holder">
+            <button class="guesses-button">SUBMIT GUESS</button>
+            <button class="guesses-button">RESET GAME</button>
+            <button class="guesses-button">CLEAR FORM</button>
           </div>
-
         </div>
       </div>
       <div class="right-column">
