@@ -15,11 +15,16 @@ function activateClear() {
   clearButton.disabled = false;
 }
 
-// clearButton.addEventListener('click', clearForms);
-//
-// function clearForms() {
-//   var formTwoInputs = document.querySelectorAll('.form2-input');
-//   for (var i = 0; i < formTwoInputs.length; i++) {
-//     formTwoInputs[i].value = '';
-//   }
-// }
+challOneName.addEventListener('input', checkSubmitStatus);
+challOneGuess.addEventListener('input', checkSubmitStatus);
+challTwoName.addEventListener('input', checkSubmitStatus);
+challTwoGuess.addEventListener('input', checkSubmitStatus);
+
+function checkSubmitStatus() {
+  if(challOneName.value != '' && challTwoName.value != '' &&
+  challOneGuess.value != '' && challOneGuess.value != '') {
+  submitGuess.disabled = false}
+  else {
+  submitGuess.disabled = true;
+}
+}
