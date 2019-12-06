@@ -32,5 +32,7 @@ function checkSubmitStatus() {
 clearButton.addEventListener('click', eraseInputs);
 
 function eraseInputs() {
-  guessBoxes[i].value = "";
+  for (var i = 0; i < guessBoxes.length; i++) {
+    guessBoxes[i].value = '';
+  }
 }
