@@ -2,6 +2,7 @@ var challOneName = document.querySelector('.name1');
 var challOneGuess = document.querySelector('.guess1');
 var challTwoName = document.querySelector('.name2');
 var challTwoGuess = document.querySelector('.guess2');
+var guessBoxes = document.querySelectorAll('.guess-boxes');
 
 var submitGuess = document.querySelector('.sub-guess');
 var clearButton = document.querySelector('.clear-button');
@@ -27,4 +28,9 @@ function checkSubmitStatus() {
   else {
   submitGuess.disabled = true;
 }
+}
+clearButton.addEventListener('click', eraseInputs);
+
+function eraseInputs() {
+  guessBoxes[i].value = "";
 }
