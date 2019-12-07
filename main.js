@@ -59,4 +59,13 @@ function latestGuess() {
  guessTwo.innerText = challTwoGuess.value;
 
  eraseGuesses();
+ disableFormButtons();
+}
+
+var resetButton = document.querySelector('.reset-button');
+
+function disableFormButtons() {
+  submitGuess.disabled = true;
+  clearButton.disabled = true;
+  resetButton.disabled = true;
 }
