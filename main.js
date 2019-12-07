@@ -36,6 +36,7 @@ function eraseInputs() {
   for (var i = 0; i < guessBoxes.length; i++) {
     guessBoxes[i].value = '';
   }
+}
 
 var nameOne = document.querySelector('.card-name1');
 var guessOne = document.querySelector('.card-guess1');
@@ -44,9 +45,18 @@ var guessTwo = document.querySelector('.card-guess2');
 
 submitGuess.addEventListener('click', latestGuess);
 
-function latestGuess(){
+var guessPair = document.querySelectorAll('.guess-pair');
+
+function eraseGuesses() {
+  for (var i = 0; i < guessPair.length; i++) {
+    guessPair[i].value = '';
+  }
+}
+function latestGuess() {
  nameOne.innerText = challOneName.value;
  nameTwo.innerText = challTwoName.value;
  guessOne.innerText = challOneGuess.value;
  guessTwo.innerText = challTwoGuess.value;
+
+ eraseGuesses();
 }
