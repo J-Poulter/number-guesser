@@ -1,98 +1,92 @@
 <!doctype html>
+
 <html>
   <head>
     <title>Number Guesser</title>
-    <link rel=“stylesheet” href=“styles.css”>
-    <link href=“https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap” rel=“stylesheet”>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap" rel="stylesheet">
   </head>
   <body>
-    <div class=“title-box”>
-      <h1><span class=“game-name”>NUMBER</span>GUESSER
+    <div class="title-box">
+      <h1><span class="game-name">NUMBER</span>GUESSER
       </h1>
-    <div class=“subheading-container”>
+    <div class="subheading-container">
       <hr>
-      <h2 class=“sub-title”>ULTIMATE CHALLENGER EDITION</h2>
+      <h2 class="sub-title">ULTIMATE CHALLENGER EDITION</h2>
       <hr>
     </div>
     </div>
-    <div class=“section-container”>
-      <div class=“left-column”>
-        <section class=“set-range-container”>
-          <h3 class=“range-header”>Set Range</h3>
-          <form class=“set-range”>
-            <div class=“min-range-container”>
-              <p class=“range-title”>Min Range</p>
-              <input class=“range-text-box” type=“text” name=“min-range”>
+    <div class="section-container">
+      <div class="left-column">
+        <section class="set-range-container">
+          <h3 class="range-header">Set Range</h3>
+          <form class="set-range">
+            <div class="min-range-container">
+              <p class="range-title">Min Range</p>
+              <input class="range-text-box" type="text" name="min-range">
             </div>
             <div>
-              <p class=“range-title”>Max Range</p>
-              <input class=“range-text-box” type=“text” name=“max-range”>
-              <button class=“range-button”>UPDATE</button>
+              <p class="range-title">Max Range</p>
+              <input class="range-text-box" type="text" name="max-range">
+              <button class="range-button">UPDATE</button>
             </div>
           </form>
         </section>
-        <div class=“guesses-form”>
-          <p class=“range-text”>The Current Range is
-             <span class=“range”>1</span> to <span class=“range”>100</span>
+        <div class="guesses-form">
+          <p class="range-text">The Current Range is
+             <span class="range">1</span> to <span class="range">100</span>
           </p>
-          <h3 class=“guesses-heading”>
+          <h3 class="guesses-heading">
             Challenger 1
           </h3>
-          <div class=“form-holders”>
+          <div class="form-holders">
             <form>
-              <p class=“guesses-text”>Name</p>
-              <input type=“text” class=“form2-input name1 guess-boxes” size=“45%“>
+              <p class="guesses-text">Name</p>
+              <input type="text" class="form2-input name1 guess-boxes" size="45%">
             </form>
             <form>
-              <p class=“guesses-text”>Guess</p>
-              <input type=“text” class=“form2-input guess1 guess-boxes guess-pair” size=“30%“>
+              <p class="guesses-text">Guess</p>
+              <input type="text" class="form2-input guess1 guess-boxes guess-pair" size="30%">
             </form>
           </div>
-          <h3 class=“guesses-heading”>
+          <h3 class="guesses-heading">
             Challenger 2
           </h3>
-          <div class=“form-holders”>
+          <div class="form-holders">
             <form>
-              <p class=“guesses-text”>Name</p>
-              <input type=“text” class=“form2-input name2 guess-boxes” size=“45%“>
+              <p class="guesses-text">Name</p>
+              <input type="text" class="form2-input name2 guess-boxes" size="45%">
             </form>
             <form>
-              <p class=“guesses-text”>Guess</p>
-              <input type=“text” class=“form2-input guess2 guess-boxes guess-pair” size=“30%“>
+              <p class="guesses-text">Guess</p>
+              <input type="text" class="form2-input guess2 guess-boxes guess-pair" size="30%">
             </form>
           </div>
-<<<<<<< HEAD
-          <div class=“guess-button-holder”>
-            <button disabled= “disabled” class=“guesses-button sub-guess”>SUBMIT GUESS</button>
-            <button class=“guesses-button”>RESET GAME</button>
-            <button disabled class=“guesses-button clear-button”>CLEAR FORM</button>
-=======
           <div class="guess-button-holder">
             <button disabled class="guesses-button sub-guess">SUBMIT GUESS</button>
             <button disabled class="guesses-button reset-button">RESET GAME</button>
             <button disabled class="guesses-button clear-button">CLEAR FORM</button>
->>>>>>> master
           </div>
         </div>
-        <div class=“lat-guess-container”>
-          <div class=“challenger-1-box”>
-          <h3 class=“lat-guess-header” >Latest Guess</h3>
-            <h4 class=“lat-guess-name card-name1” >Challenger 1 Name</h4>
-            <p class=“current-guess-text”>current guess</p>
-            <p class=“number-guess card-guess1”></p>
-            <p class=“guess-comment guess-comment1">no guesses yet!</p>
+        <div class="lat-guess-container">
+          <div class="challenger-1-box">
+          <h3 class="lat-guess-header" >Latest Guess</h3>
+            <h4 class="lat-guess-name card-name1" >Challenger 1 Name</h4>
+            <p class="current-guess-text">current guess</p>
+            <p class="number-guess card-guess1"></p>
+            <p class="guess-comment guess-comment1">no guesses yet!</p>
           </div>
-          <div class=“challenger-2-box”>
-            <h4 class=“lat-guess-name card-name2" >Challenger 2 Name</h4>
-            <p class=“current-guess-text ” >current guess</p>
-            <p class=“number-guess card-guess2"> </p>
-            <p class=“guess-comment guess-comment2”>no guesses yet!</p>
+          <div class="challenger-2-box">
+            <h4 class="lat-guess-name card-name2" >Challenger 2 Name</h4>
+            <p class="current-guess-text " >current guess</p>
+            <p class="number-guess card-guess2"> </p>
+            <p class="guess-comment guess-comment2">no guesses yet!</p>
           </div>
         </div>
       </div>
-      <div class=“right-column”>
+      <div class="right-column">
       </div>
     </div>
-    <script src=“main.js”></script>
+    <script src="main.js"></script>
   </body>
 </html>
