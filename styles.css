@@ -198,10 +198,13 @@ hr {
 }
 
 .lat-guess-name {
+	display: flex;
+	justify-content: center;
 	color: #404041;
 	font-size: 22px;
 	margin-bottom: 0px;
 	margin-top: 5px;
+
 }
 
 .current-guess-text{
@@ -234,6 +237,7 @@ hr {
 .number-guess{
 	display: flex;
   justify-content: center;
+	height: 140px;
   font-size: 100px;
   font-weight: 700;
 	color: #dd1972;
