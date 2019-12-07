@@ -54,14 +54,25 @@ function eraseGuesses() {
   }
 }
 
+
+
 function latestGuess() {
  nameOne.innerText = challOneName.value;
  nameTwo.innerText = challTwoName.value;
  guessOne.innerText = challOneGuess.value;
  guessTwo.innerText = challTwoGuess.value;
  eraseGuesses();
+ disableFormButtons();
  guessResponse1();
  guessResponse2();
+}
+
+var resetButton = document.querySelector('.reset-button');
+
+function disableFormButtons() {
+  submitGuess.disabled = true;
+  clearButton.disabled = true;
+  resetButton.disabled = true;
 }
 
 var randomNum = 50;
