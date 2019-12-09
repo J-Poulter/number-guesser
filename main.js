@@ -99,6 +99,19 @@ function guessResponse2() {
   }
 }
 
+var minRange = document.querySelector('.set-min-range');
+var maxRange = document.querySelector('.set-max-range');
+var minRangeText = document.querySelector('.min-range-text-box');
+var maxRangeText = document.querySelector('.max-range-text-box');
+var updateButton = document.querySelector('.range-button');
+
+updateButton.addEventListener('click', updateRange);
+
+function updateRange() {
+  minRange.innerText = minRangeText.value;
+  maxRange.innerText = maxRangeText.value;
+}
+
 function randomInRange (mini, maxi) {
   return Math.floor(Math.random() * (maxi - mini +1)) + mini;
 }
