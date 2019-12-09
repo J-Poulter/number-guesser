@@ -74,7 +74,7 @@ function disableFormButtons() {
   resetButton.disabled = true;
 }
 
-var randomNum = 50;
+var randomNum = Math.floor(Math.random() * 100);
 
 function guessResponse1() {
   if (guessOne.innerText == randomNum) {
@@ -97,4 +97,8 @@ function guessResponse2() {
   else if (guessTwo.innerText > randomNum) {
     guessComment2.innerText = "That's Too High!";
   }
+}
+
+function randomInRange (mini, maxi) {
+  return Math.floor(Math.random() * (maxi - mini +1)) + mini;
 }
