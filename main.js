@@ -74,7 +74,7 @@ function disableFormButtons() {
   resetButton.disabled = true;
 }
 
-var randomNum = 50;
+var randomNum = Math.floor(Math.random() * 100);
 
 function guessResponse1() {
   if (guessOne.innerText == randomNum) {
@@ -97,4 +97,21 @@ function guessResponse2() {
   else if (guessTwo.innerText > randomNum) {
     guessComment2.innerText = "That's Too High!";
   }
+}
+
+var minRange = document.querySelector('.set-min-range');
+var maxRange = document.querySelector('.set-max-range');
+var minRangeText = document.querySelector('.min-range-text-box');
+var maxRangeText = document.querySelector('.max-range-text-box');
+var updateButton = document.querySelector('.range-button');
+
+updateButton.addEventListener('click', updateRange);
+
+function updateRange() {
+  minRange.innerText = minRangeText.value;
+  maxRange.innerText = maxRangeText.value;
+}
+
+function randomInRange (mini, maxi) {
+  return Math.floor(Math.random() * (maxi - mini +1)) + mini;
 }
