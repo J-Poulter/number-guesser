@@ -5,6 +5,8 @@ var challTwoGuess = document.querySelector('.guess2');
 var guessBoxes = document.querySelectorAll('.guess-boxes');
 var guessComment1 = document.querySelector('.guess-comment1');
 var guessComment2 = document.querySelector('.guess-comment2');
+var randomNum = Math.floor(Math.random()* 100 + 1);
+
 
 var submitGuess = document.querySelector('.sub-guess');
 var clearButton = document.querySelector('.clear-button');
@@ -54,6 +56,7 @@ function eraseGuesses() {
     guessPair[i].value = '';
   }
 }
+
 function latestGuess() {
  nameOne.innerText = challOneName.value;
  nameTwo.innerText = challTwoName.value;
@@ -74,7 +77,26 @@ function disableFormButtons() {
   resetButton.disabled = true;
 }
 
-var randomNum = Math.floor(Math.random() * 100);
+var minRange = document.querySelector('.set-min-range');
+var maxRange = document.querySelector('.set-max-range');
+var minRangeText = document.querySelector('.min-range-text-box');
+var maxRangeText = document.querySelector('.max-range-text-box');
+var updateButton = document.querySelector('.range-button');
+
+updateButton.addEventListener('click', updateRange);
+
+function updateRange() {
+  var minRangeValue = minRangeText.value;
+  var maxRangeValue = maxRangeText.value;
+  minRange.innerText = minRangeText.value;
+  maxRange.innerText = maxRangeText.value;
+
+  randomInRange(minRangeValue, maxRangeValue);
+}
+
+function randomInRange(mini, maxi) {
+  randomNum = Math.floor(Math.random() * (maxi - mini + 1) + mini);
+}
 
 function guessResponse1() {
   if (guessOne.innerText == randomNum) {
@@ -87,6 +109,7 @@ function guessResponse1() {
     guessComment1.innerText = "That's Too High!";
   }
 }
+
 function guessResponse2() {
   if (guessTwo.innerText == randomNum) {
     guessComment2.innerText = "Boom!";
@@ -97,21 +120,4 @@ function guessResponse2() {
   else if (guessTwo.innerText > randomNum) {
     guessComment2.innerText = "That's Too High!";
   }
-}
-
-var minRange = document.querySelector('.set-min-range');
-var maxRange = document.querySelector('.set-max-range');
-var minRangeText = document.querySelector('.min-range-text-box');
-var maxRangeText = document.querySelector('.max-range-text-box');
-var updateButton = document.querySelector('.range-button');
-
-updateButton.addEventListener('click', updateRange);
-
-function updateRange() {
-  minRange.innerText = minRangeText.value;
-  maxRange.innerText = maxRangeText.value;
-}
-
-function randomInRange (mini, maxi) {
-  return Math.floor(Math.random() * (maxi - mini +1)) + mini;
 }
