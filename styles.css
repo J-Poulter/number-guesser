@@ -98,7 +98,7 @@ hr {
 
 .range-header {
 	margin-left: 15px;
-	padding-top: 10px;
+	margin-top: 5px;
 	font-size: 25px;
 	margin-bottom: 0px;
 	color: #404041;
@@ -248,4 +248,95 @@ hr {
   font-weight: 700;
 	color: #dd1972;
   margin: -20px;
+}
+
+.winner-card{
+display: flex;
+flex-direction: column;
+align-items: center;
+height: 250px;
+background-color: white;
+margin-top: 20px;
+margin-left: 40px;
+margin-right: 40px;
+
+}
+
+.win-card-header{
+	display: flex;
+	flex-direction: row;
+	height: 55px;
+	border-bottom: solid #d0d2d3 1px
+}
+
+.vs-span{
+	mergin-left: 40px;
+	margin-right: 40px;
+}
+
+.win-top-row{
+	margin: 20px;
+	color: #404041;
+
+}
+.name-span{
+	 font-weight: 700;
+	 font-size: 20px
+ }
+
+.vs-span{
+ margin-top: 23px;
+}
+
+.winner-box{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	color: #404041;
+}
+
+.win-card-name{
+	font-weight: 700;
+	font-size: 40px;
+	margin: auto;
+}
+
+.win-status{
+	font-weight: 100;
+	margin: auto;
+	font-size: 40px;
+}
+
+.winner-stats{
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+	font-weight: 700;
+  font-size: 22px;
+	width:95%;
+	margin-top: 35px;
+	border-top: solid 1px #D0D2D3;
+	margin-left: 10px
+}
+
+.close-button{
+	border-radius: 30px;
+	height: 30px;
+	width: 30px;
+	margin-top: 0px;
+	margin-right: 0px;
+	background-color: #404041;
+	color: #D0D2D3;
+	margin-right: 10px;
+	margin-right: 10px;
+}
+
+.win-card-footer{
+	margin: 0px;
+	margin-top: 10px;
+	font-weight: 100;
+}
+
+.changed-nums{
+	font-weight: 700;
 }
