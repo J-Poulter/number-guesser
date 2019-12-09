@@ -74,7 +74,7 @@ function disableFormButtons() {
   resetButton.disabled = true;
 }
 
-var randomNum = 50;
+var randomNum = Math.floor(Math.random() * 100);
 
 function guessResponse1() {
   if (guessOne.innerText == randomNum) {
@@ -107,11 +107,11 @@ var updateButton = document.querySelector('.range-button');
 
 updateButton.addEventListener('click', updateRange);
 
-minRangeText.addEventListener('input');
-maxRangeText.addEventListener('input');
-
-
 function updateRange() {
   minRange.innerText = minRangeText.value;
   maxRange.innerText = maxRangeText.value;
+}
+
+function randomInRange (mini, maxi) {
+  return Math.floor(Math.random() * (maxi - mini +1)) + mini;
 }
