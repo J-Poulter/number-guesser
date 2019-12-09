@@ -75,7 +75,13 @@ hr {
 	justify-content: space-around;
 }
 
-.range-text-box {
+.min-range-text-box {
+	height: 45px;
+	width: 200px;
+	margin-top: 5px
+}
+
+.max-range-text-box {
 	height: 45px;
 	width: 200px;
 	margin-top: 5px

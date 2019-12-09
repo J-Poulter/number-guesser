@@ -98,3 +98,20 @@ function guessResponse2() {
     guessComment2.innerText = "That's Too High!";
   }
 }
+
+var minRange = document.querySelector('.set-min-range');
+var maxRange = document.querySelector('.set-max-range');
+var minRangeText = document.querySelector('.min-range-text-box');
+var maxRangeText = document.querySelector('.max-range-text-box');
+var updateButton = document.querySelector('.range-button');
+
+updateButton.addEventListener('click', updateRange);
+
+minRangeText.addEventListener('input');
+maxRangeText.addEventListener('input');
+
+
+function updateRange() {
+  minRange.innerText = minRangeText.value;
+  maxRange.innerText = maxRangeText.value;
+}
