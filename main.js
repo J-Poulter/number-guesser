@@ -103,10 +103,14 @@ function randomInRange(mini, maxi) {
 
 function checkGuess() {
   if (randomNum == guessOne.innerText){
-  createWinCard(nameOne.innerText, count)
+  createWinCard(nameOne.innerText, count);
+  eraseInputs();
+  newNum();
 }
  else if (randomNum == guessTwo.innerText) {
    createWinCard(nameTwo.innerText, count)
+   eraseInputs();
+   newNum();
 }
 }
 
@@ -162,4 +166,8 @@ function increaseCount() {
 
 function resetCount() {
   count = 0;
+}
+
+function newNum() {
+  randomNum = Math.floor(Math.random()* 100 + 1);
 }
