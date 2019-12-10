@@ -70,6 +70,7 @@ function latestGuess() {
  guessResponse2();
  increaseCount();
  checkGuess();
+
 }
 
 var resetButton = document.querySelector('.reset-button');
@@ -106,11 +107,13 @@ function checkGuess() {
   createWinCard(nameOne.innerText, count);
   eraseInputs();
   newNum();
+  resetCount();
 }
  else if (randomNum == guessTwo.innerText) {
    createWinCard(nameTwo.innerText, count)
    eraseInputs();
    newNum();
+   resetCount();
 }
 }
 
