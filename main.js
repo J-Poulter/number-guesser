@@ -3,6 +3,7 @@ var challOneGuess = document.querySelector('.guess1');
 var challTwoName = document.querySelector('.name2');
 var challTwoGuess = document.querySelector('.guess2');
 var guessBoxes = document.querySelectorAll('.guess-boxes');
+var rangeBoxes = document.querySelectorAll('.range-boxes');
 var guessComment1 = document.querySelector('.guess-comment1');
 var guessComment2 = document.querySelector('.guess-comment2');
 var randomNum = Math.floor(Math.random()* 100 + 1);
@@ -173,4 +174,9 @@ function resetCount() {
 
 function newNum() {
   randomNum = Math.floor(Math.random()* 100 + 1);
+  minRange.innerText = 1;
+  maxRange.innerText = 100;
+  for (var i = 0; i < rangeBoxes.length; i++) {
+    rangeBoxes[i].value = '';
+}
 }

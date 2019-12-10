@@ -77,6 +77,11 @@ hr {
 	display: flex;
 	justify-content: space-around;
 }
+.set-max-range,
+.set-min-range{
+	text-decoration: underline;
+	font-weight: bold;
+}
 
 .min-range-text-box {
 	height: 45px;
@@ -139,11 +144,6 @@ hr {
 	color: #404041;
 	padding-left: 15px;
 	margin-top: 10px;
-}
-
-.range {
-	font-weight: 700;
-	text-decoration: underline;
 }
 
 .guesses-heading {
