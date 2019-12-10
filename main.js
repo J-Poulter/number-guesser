@@ -70,6 +70,7 @@ function latestGuess() {
  guessResponse2();
  increaseCount();
  checkGuess();
+
 }
 
 var resetButton = document.querySelector('.reset-button');
@@ -103,10 +104,16 @@ function randomInRange(mini, maxi) {
 
 function checkGuess() {
   if (randomNum == guessOne.innerText){
-  createWinCard(nameOne.innerText, count)
+  createWinCard(nameOne.innerText, count);
+  eraseInputs();
+  newNum();
+  resetCount();
 }
  else if (randomNum == guessTwo.innerText) {
    createWinCard(nameTwo.innerText, count)
+   eraseInputs();
+   newNum();
+   resetCount();
 }
 }
 
@@ -162,4 +169,8 @@ function increaseCount() {
 
 function resetCount() {
   count = 0;
+}
+
+function newNum() {
+  randomNum = Math.floor(Math.random()* 100 + 1);
 }
