@@ -6,6 +6,7 @@ var guessBoxes = document.querySelectorAll('.guess-boxes');
 var guessComment1 = document.querySelector('.guess-comment1');
 var guessComment2 = document.querySelector('.guess-comment2');
 var randomNum = Math.floor(Math.random()* 100 + 1);
+var count = 0;
 
 
 var submitGuess = document.querySelector('.sub-guess');
@@ -67,6 +68,8 @@ function latestGuess() {
  disableFormButtons();
  guessResponse1();
  guessResponse2();
+ increaseCount();
+ checkGuess();
 }
 
 var resetButton = document.querySelector('.reset-button');
@@ -91,11 +94,42 @@ function updateRange() {
   minRange.innerText = minRangeText.value;
   maxRange.innerText = maxRangeText.value;
 
-  randomInRange(minRangeValue, maxRangeValue);
+  randomInRange(parseInt(minRangeValue), parseInt(maxRangeValue));
 }
 
 function randomInRange(mini, maxi) {
   randomNum = Math.floor(Math.random() * (maxi - mini + 1) + mini);
+}
+
+function checkGuess() {
+  if (randomNum == guessOne.innerText){
+  createWinCard(nameOne.innerText, count)
+}
+ else if (randomNum == guessTwo.innerText) {
+   createWinCard(nameTwo.innerText, count)
+}
+}
+
+function createWinCard(winnerName, count) {
+  const div = document.createElement('div');
+  div.className = 'winner-card';
+  div.innerHTML = `
+  <div class="win-card-header">
+    <p class="win-top-row name-span">${nameOne.innerText}</p>
+    <p class="win-top-row vs-span">VS</p>
+    <p class="win-top-row name-span">${nameTwo.innerText}</p>
+  </div>
+  <div class="winner-box">
+    <h2 class="win-card-name">${winnerName}</h2>
+    <h2 class="win-status">WINNER</h2>
+  </div>
+  <div class="winner-stats">
+    <p class="win-card-footer"><span class="changed-nums">${count}</span> GUESSES</p>
+    <p class="win-card-footer"><span class="changed-nums">1 </span>MINUTE <span class="changed-nums">35 </span>SECONDS</p>
+    <button type="button" class="close-button">x</button>
+  </div>
+  `;
+  document.querySelector('.right-column').appendChild(div);
 }
 
 function guessResponse1() {
@@ -120,4 +154,12 @@ function guessResponse2() {
   else if (guessTwo.innerText > randomNum) {
     guessComment2.innerText = "That's Too High!";
   }
+}
+
+function increaseCount() {
+  count = count + 1;
+}
+
+function resetCount() {
+  count = 0;
 }
