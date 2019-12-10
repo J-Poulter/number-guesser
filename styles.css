@@ -68,6 +68,9 @@ hr {
 	background-color: #D0D2D3;
 	width: 50%;
 	height: 135vh;
+	display: flex;
+	flex-direction: column-reverse;
+	justify-content: flex-end;
 }
 
 .set-range {
