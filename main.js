@@ -90,6 +90,9 @@ var updateButton = document.querySelector('.range-button');
 
 updateButton.addEventListener('click', updateRange);
 
+function
+
+
 function updateRange() {
   var minRangeValue = minRangeText.value;
   var maxRangeValue = maxRangeText.value;
@@ -190,5 +193,6 @@ function removeCard() {
     var parent = event.target.closest('.winner-card');
     parent.remove();
   }
-
 }
+.insertAdjacentHTML('beforeend', '<p class="error-msg"><img src="assets/error-icon.svg" class="error-icon" width="50px">
+Must be less than min</p>')
