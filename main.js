@@ -6,52 +6,41 @@ var guessBoxes = document.querySelectorAll('.guess-boxes');
 var rangeBoxes = document.querySelectorAll('.range-boxes');
 var guessComment1 = document.querySelector('.guess-comment1');
 var guessComment2 = document.querySelector('.guess-comment2');
-var randomNum = Math.floor(Math.random()* 100 + 1);
-var count = 0;
-
-
 var submitGuess = document.querySelector('.sub-guess');
 var clearButton = document.querySelector('.clear-button');
-
-challOneName.addEventListener('change', activateClear);
-challOneGuess.addEventListener('change', activateClear);
-challTwoName.addEventListener('change', activateClear);
-challTwoGuess.addEventListener('change', activateClear);
+var guessPair = document.querySelectorAll('.guess-pair');
+var nameOne = document.querySelector('.card-name1');
+var guessOne = document.querySelector('.card-guess1');
+var nameTwo = document.querySelector('.card-name2');
+var guessTwo = document.querySelector('.card-guess2');
+var resetButton = document.querySelector('.reset-button');
+var minRange = document.querySelector('.set-min-range');
+var maxRange = document.querySelector('.set-max-range');
+var minRangeText = document.querySelector('.min-range-text-box');
+var maxRangeText = document.querySelector('.max-range-text-box');
+var updateButton = document.querySelector('.range-button');
+var rightColumn = document.querySelector('.right-column');
+var randomNum = Math.floor(Math.random()* 100 + 1);
+var count = 0;
 
 function activateClear() {
   clearButton.disabled = false;
 }
 
-challOneName.addEventListener('input', checkSubmitStatus);
-challOneGuess.addEventListener('input', checkSubmitStatus);
-challTwoName.addEventListener('input', checkSubmitStatus);
-challTwoGuess.addEventListener('input', checkSubmitStatus);
-
 function checkSubmitStatus() {
   if(challOneName.value != '' && challTwoName.value != '' &&
-  challOneGuess.value != '' && challOneGuess.value != '') {
-  submitGuess.disabled = false}
-  else {
-  submitGuess.disabled = true;
+    challOneGuess.value != '' && challOneGuess.value != '') {
+    submitGuess.disabled = false
+  } else {
+    submitGuess.disabled = true;
+  }
 }
-}
-
-clearButton.addEventListener('click', eraseInputs);
 
 function eraseInputs() {
   for (var i = 0; i < guessBoxes.length; i++) {
     guessBoxes[i].value = '';
   }
 }
-
-var nameOne = document.querySelector('.card-name1');
-var guessOne = document.querySelector('.card-guess1');
-var nameTwo = document.querySelector('.card-name2');
-var guessTwo = document.querySelector('.card-guess2');
-
-submitGuess.addEventListener('click', latestGuess);
-
-var guessPair = document.querySelectorAll('.guess-pair');
 
 function eraseGuesses() {
   for (var i = 0; i < guessPair.length; i++) {
@@ -60,21 +49,18 @@ function eraseGuesses() {
 }
 
 function latestGuess() {
- nameOne.innerText = challOneName.value;
- nameTwo.innerText = challTwoName.value;
- guessOne.innerText = challOneGuess.value;
- guessTwo.innerText = challTwoGuess.value;
+  nameOne.innerText = challOneName.value;
+  nameTwo.innerText = challTwoName.value;
+  guessOne.innerText = challOneGuess.value;
+  guessTwo.innerText = challTwoGuess.value;
 
- eraseGuesses();
- disableFormButtons();
- guessResponse1();
- guessResponse2();
- increaseCount();
- checkGuess();
-
+  eraseGuesses();
+  disableFormButtons();
+  guessResponse1();
+  guessResponse2();
+  increaseCount();
+  checkGuess();
 }
-
-var resetButton = document.querySelector('.reset-button');
 
 function disableFormButtons() {
   submitGuess.disabled = true;
@@ -82,33 +68,19 @@ function disableFormButtons() {
   resetButton.disabled = true;
 }
 
-var minRange = document.querySelector('.set-min-range');
-var maxRange = document.querySelector('.set-max-range');
-var minRangeText = document.querySelector('.min-range-text-box');
-var maxRangeText = document.querySelector('.max-range-text-box');
-var updateButton = document.querySelector('.range-button');
-
-
-minRangeText.addEventListener('input', checkRangeStatus);
-maxRangeText.addEventListener('input', checkRangeStatus);
-
 function checkRangeStatus() {
   if(minRangeText.value < maxRangeText.value) {
     updateButton.disabled = false;
-  } else{
+  } else {
     updateButton.disabled = true;
   }
 }
-
-updateButton.addEventListener('click', updateRange);
 
 function updateRange() {
   var minRangeValue = minRangeText.value;
   var maxRangeValue = maxRangeText.value;
   minRange.innerText = minRangeText.value;
   maxRange.innerText = maxRangeText.value;
-
-
 
   randomInRange(parseInt(minRangeValue), parseInt(maxRangeValue));
 }
@@ -119,17 +91,17 @@ function randomInRange(mini, maxi) {
 
 function checkGuess() {
   if (randomNum == guessOne.innerText){
-  createWinCard(nameOne.innerText, count);
-  eraseInputs();
-  newNum();
-  resetCount();
-}
+    createWinCard(nameOne.innerText, count);
+    eraseInputs();
+    newNum();
+    resetCount();
+  }
  else if (randomNum == guessTwo.innerText) {
    createWinCard(nameTwo.innerText, count)
    eraseInputs();
    newNum();
    resetCount();
-}
+  }
 }
 
 function createWinCard(winnerName, count) {
@@ -190,19 +162,30 @@ function newNum() {
   randomNum = Math.floor(Math.random()* 100 + 1);
   minRange.innerText = 1;
   maxRange.innerText = 100;
+
   for (var i = 0; i < rangeBoxes.length; i++) {
     rangeBoxes[i].value = '';
+  }
 }
-}
-
-var rightColumn = document.querySelector('.right-column');
-
-rightColumn.addEventListener('click', removeCard);
 
 function removeCard() {
   if(event.target.classList.contains('close-button')) {
     var parent = event.target.closest('.winner-card');
     parent.remove();
   }
-
 }
+
+challOneName.addEventListener('change', activateClear);
+challOneGuess.addEventListener('change', activateClear);
+challTwoName.addEventListener('change', activateClear);
+challTwoGuess.addEventListener('change', activateClear);
+challOneName.addEventListener('input', checkSubmitStatus);
+challOneGuess.addEventListener('input', checkSubmitStatus);
+challTwoName.addEventListener('input', checkSubmitStatus);
+challTwoGuess.addEventListener('input', checkSubmitStatus);
+clearButton.addEventListener('click', eraseInputs);
+submitGuess.addEventListener('click', latestGuess);
+minRangeText.addEventListener('input', checkRangeStatus);
+maxRangeText.addEventListener('input', checkRangeStatus);
+rightColumn.addEventListener('click', removeCard);
+updateButton.addEventListener('click', updateRange);
