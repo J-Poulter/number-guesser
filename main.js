@@ -180,3 +180,15 @@ function newNum() {
     rangeBoxes[i].value = '';
 }
 }
+
+var rightColumn = document.querySelector('.right-column');
+
+rightColumn.addEventListener('click', removeCard);
+
+function removeCard() {
+  if(event.target.classList.contains('close-button')) {
+    var parent = event.target.closest('.winner-card');
+    parent.remove();
+  }
+
+}
