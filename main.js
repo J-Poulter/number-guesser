@@ -88,6 +88,18 @@ var minRangeText = document.querySelector('.min-range-text-box');
 var maxRangeText = document.querySelector('.max-range-text-box');
 var updateButton = document.querySelector('.range-button');
 
+
+minRangeText.addEventListener('input', checkRangeStatus);
+maxRangeText.addEventListener('input', checkRangeStatus);
+
+function checkRangeStatus() {
+  if(minRangeText.value < maxRangeText.value) {
+    updateButton.disabled = false;
+  } else{
+    updateButton.disabled = true;
+  }
+}
+
 updateButton.addEventListener('click', updateRange);
 
 function
@@ -98,6 +110,8 @@ function updateRange() {
   var maxRangeValue = maxRangeText.value;
   minRange.innerText = minRangeText.value;
   maxRange.innerText = maxRangeText.value;
+
+
 
   randomInRange(parseInt(minRangeValue), parseInt(maxRangeValue));
 }
