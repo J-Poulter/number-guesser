@@ -92,7 +92,13 @@ var updateButton = document.querySelector('.range-button');
 minRangeText.addEventListener('input', checkRangeStatus);
 maxRangeText.addEventListener('input', checkRangeStatus);
 
-
+function checkRangeStatus() {
+  if(minRangeText.value < maxRangeText.value) {
+    updateButton.disabled = false;
+  } else{
+    updateButton.disabled = true;
+  }
+}
 
 updateButton.addEventListener('click', updateRange);
 
