@@ -13,3 +13,5 @@ guesses, and a timer that has not been built into the javascript yet. The user i
 by clicking the close button on the card itself.
 
 ![Number Guesser](https://user-images.githubusercontent.com/53810104/70675623-938be800-1c81-11ea-8000-a2ddcc2e6be7.png)
+![Number Guesser](https://user-images.githubusercontent.com/53810104/70675995-a7841980-1c82-11ea-977a-e6dfee5e4b8f.png)
+
