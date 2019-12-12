@@ -20,6 +20,8 @@ var minRangeText = document.querySelector('.min-range-text-box');
 var maxRangeText = document.querySelector('.max-range-text-box');
 var updateButton = document.querySelector('.range-button');
 var rightColumn = document.querySelector('.right-column');
+var guessesForm = document.querySelector('.guesses-form')
+var rangeForm = document.querySelector('.set-range-container')
 var randomNum = Math.floor(Math.random()* 100 + 1);
 var errorMsg = document.querySelector('.error-msg');
 var errorMsg2 = document.querySelector('.error-msg2');
@@ -198,17 +200,11 @@ function removeCard() {
   }
 }
 
-challOneName.addEventListener('change', activateClear);
-challOneGuess.addEventListener('change', activateClear);
-challTwoName.addEventListener('change', activateClear);
-challTwoGuess.addEventListener('change', activateClear);
-challOneName.addEventListener('input', checkSubmitStatus);
-challOneGuess.addEventListener('input', checkSubmitStatus);
-challTwoName.addEventListener('input', checkSubmitStatus);
-challTwoGuess.addEventListener('input', checkSubmitStatus);
+
+guessesForm.addEventListener('change', activateClear)
+guessesForm.addEventListener('input', checkSubmitStatus);
+rangeForm.addEventListener('input', checkRangeStatus);
 clearButton.addEventListener('click', eraseInputs);
 submitGuess.addEventListener('click', latestGuess);
-minRangeText.addEventListener('input', checkRangeStatus);
-maxRangeText.addEventListener('input', checkRangeStatus);
 rightColumn.addEventListener('click', removeCard);
 updateButton.addEventListener('click', updateRange);
