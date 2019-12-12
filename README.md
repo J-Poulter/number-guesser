@@ -11,3 +11,5 @@ include their name, guess and a hint for their next guess if their first one is 
 guessed, a winner card will appear in the right side of the page. This card has players, the winner, the number of
 guesses, and a timer that has not been built into the javascript yet. The user is able to clear those cards from the screen
 by clicking the close button on the card itself.
+
+https://user-images.githubusercontent.com/53810104/70675623-938be800-1c81-11ea-8000-a2ddcc2e6be7.png
