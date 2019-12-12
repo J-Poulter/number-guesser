@@ -23,6 +23,8 @@ var rightColumn = document.querySelector('.right-column');
 var guessesForm = document.querySelector('.guesses-form')
 var rangeForm = document.querySelector('.set-range-container')
 var randomNum = Math.floor(Math.random()* 100 + 1);
+var errorMsg = document.querySelector('.error-msg');
+var errorMsg2 = document.querySelector('.error-msg2');
 var count = 0;
 
 function activateClear() {
@@ -30,11 +32,19 @@ function activateClear() {
 }
 
 function checkSubmitStatus() {
-  if(challOneName.value != '' && challTwoName.value != '' &&
+  if (challOneName.value != '' && challTwoName.value != '' &&
     challOneGuess.value != '' && challOneGuess.value != '') {
     submitGuess.disabled = false
   } else {
     submitGuess.disabled = true;
+  }
+}
+function checkGuessRange() {
+  if (challOneGuess.value > minRange.innerText && challOneGuess.value < maxRange.innerText && challTwoGuess.value > minRange.innerText && challTwoGuess.value < maxRange.innerText) {
+    errorMsg2.style.visibility = "hidden";
+  }
+    else {
+    errorMsg2.style.visibility = "visible";
   }
 }
 
@@ -55,7 +65,7 @@ function latestGuess() {
   nameTwo.innerText = challTwoName.value;
   guessOne.innerText = challOneGuess.value;
   guessTwo.innerText = challTwoGuess.value;
-
+  checkGuessRange();
   eraseGuesses();
   disableFormButtons();
   guessResponse1();
@@ -71,10 +81,14 @@ function disableFormButtons() {
 }
 
 function checkRangeStatus() {
-  if(minRangeText.value < maxRangeText.value) {
+  if (minRangeText.value < maxRangeText.value) {
     updateButton.disabled = false;
+    maxRangeText.style.border = "solid 1px #d6d6d4";
+    errorMsg.style.visibility = "hidden";
   } else {
     updateButton.disabled = true;
+    maxRangeText.style.border = "solid 2px #dd1972";
+    errorMsg.style.visibility = "visible";
   }
 }
 
@@ -97,13 +111,20 @@ function checkGuess() {
     eraseInputs();
     newNum();
     resetCount();
+    resetErrorMessage();
   }
  else if (randomNum == guessTwo.innerText) {
    createWinCard(nameTwo.innerText, count)
    eraseInputs();
    newNum();
    resetCount();
+   resetErrorMessage();
   }
+}
+
+function resetErrorMessage() {
+  errorMsg.style.visibility = "hidden";
+  errorMsg2.style.visibility = "hidden";
 }
 
 function createWinCard(winnerName, count) {
@@ -177,7 +198,8 @@ function removeCard() {
   }
 }
 
-
+errorMsg.style.visibility = "hidden";
+errorMsg2.style.visibility = "hidden";
 guessesForm.addEventListener('change', activateClear)
 guessesForm.addEventListener('input', checkSubmitStatus);
 rangeForm.addEventListener('input', checkRangeStatus);

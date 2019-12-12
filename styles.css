@@ -86,13 +86,26 @@ hr {
 .min-range-text-box {
 	height: 45px;
 	width: 200px;
-	margin-top: 5px
+	margin-top: 5px;
 }
 
 .max-range-text-box {
 	height: 45px;
 	width: 200px;
-	margin-top: 5px
+	margin-top: 5px;
+}
+
+.error-msg {
+	color: #dd1972;
+}
+
+.error-msg2 {
+	display: inline-flex;
+	align-self: flex-end;
+	margin-left: 86px;
+  margin-top: 50px;
+  font-size: 19px;
+	color: #dd1972;
 }
 
 .set-range-container {
