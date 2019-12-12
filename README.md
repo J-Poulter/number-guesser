@@ -1,5 +1,5 @@
 # Number Guesser: Ultimate Challenger Edition
-##Project Instructions
+## Project Instructions
 We were asked to recreate a game using a visual aid and notes of the fucntionality of the game. We not only had to get it
 working and looking like the guide, we had also had to use clean, readable code throughout the process.
 
