@@ -26,8 +26,6 @@ var randomNum = Math.floor(Math.random()* 100 + 1);
 var errorMsg = document.querySelector('.error-msg');
 var errorMsg2 = document.querySelector('.error-msg2');
 var count = 0;
-errorMsg.style.visibility = "hidden";
-errorMsg2.style.visibility = "hidden";
 
 function activateClear() {
   clearButton.disabled = false;
@@ -200,7 +198,8 @@ function removeCard() {
   }
 }
 
-
+errorMsg.style.visibility = "hidden";
+errorMsg2.style.visibility = "hidden";
 guessesForm.addEventListener('change', activateClear)
 guessesForm.addEventListener('input', checkSubmitStatus);
 rangeForm.addEventListener('input', checkRangeStatus);
