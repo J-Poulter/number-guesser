@@ -20,11 +20,10 @@ var minRangeText = document.querySelector('.min-range-text-box');
 var maxRangeText = document.querySelector('.max-range-text-box');
 var updateButton = document.querySelector('.range-button');
 var rightColumn = document.querySelector('.right-column');
-var randomNum = Math.floor(Math.random()* 100 + 1);
-var count = 0;
-
 var guessesForm = document.querySelector('.guesses-form')
 var rangeForm = document.querySelector('.set-range-container')
+var randomNum = Math.floor(Math.random()* 100 + 1);
+var count = 0;
 
 function activateClear() {
   clearButton.disabled = false;
